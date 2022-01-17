@@ -1,0 +1,24 @@
+html
+include ../partials/header
+body
+
+  h1 #{data.username}'s order
+  p #{data.restaurant}
+
+  each thing in data.summary
+      p subtotal #{thing.subtotal}$
+      p total #{thing.total}$
+      p fee #{thing.fee}$
+      p tax #{thing.tax}$
+
+      p ***************************************************************
+
+      p Menu items:
+        each item in thing.order
+          p x#{item.quantity} #{item.name}
+
+
+
+  script
+     include ../client.js
+  script!= `const object = ${JSON.stringify(session.username)};`

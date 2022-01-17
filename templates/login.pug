@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		include ../partials/header
+
+		style.
+
+	form(method='POST' action='/login')
+
+		body
+			div
+				form(action='/login' method='post')
+					h1 Login
+					br
+					input(type="text" name="username" id="username" placeholder="username" required)
+					br
+					br
+					br
+					input(type="password" name="password" id="password" placeholder="password" required)
+					br
+					br
+					button#login(type='submit') Login

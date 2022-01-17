@@ -1,0 +1,53 @@
+head
+
+  style.
+
+    /*navigation bar background*/
+    .topnav {
+    overflow: hidden;
+    background-color: #e9e9e9;
+    }
+
+    /*style the links*/
+    .topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    }
+
+    /*changing color of links/boxes on hover*/
+    .topnav a:hover {
+    background-color: #ddd;
+    color: white;
+    }
+
+    /*when the window gets really small it changes the links to a vertical arrangement*/
+    @media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+    }
+    }
+
+  body
+    div.topnav
+      form(method = "POST" action="/logout")
+        a(href="/") homePage
+        a(href="/users") Users
+
+        if (session.loggedin)
+          a(href="/profile") Your profile
+          a(href="/orderform") Order Form
+          button(id="logout") Logout
+
+        else
+          a(href="/login") login
+          a(href="/register") Registration page
+        br

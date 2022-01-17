@@ -1,0 +1,36 @@
+html
+  head
+    include ../partials/header
+
+    h1 Users' Page
+
+    style.
+
+      .usersList{
+      overflow: hidden;
+      }
+
+      /*style the links*/
+      .usersList a {
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      }
+
+      /*changing color of links/boxes on hover*/
+      .usersList a:hover {
+      background-color: #ddd;
+      color: white;
+      }
+
+  div.usersList
+    each user in users
+      if(!user.privacy)
+          a(href="/users/" + user._id) #{user.username}
+          br
+          br
+
+  script
+     include ../client.js

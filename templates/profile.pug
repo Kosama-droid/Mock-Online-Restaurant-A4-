@@ -1,0 +1,58 @@
+html
+include ../partials/header
+  head
+  style.
+
+    .orderList{
+    overflow: hidden;
+    }
+
+    /*style the links*/
+    .orderList a {
+    color: black;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-size: 17px;
+    }
+
+    /*changing color of links/boxes on hover*/
+    .orderList a:hover {
+    background-color: #ddd;
+    color: white;
+    }
+
+body
+  h1 #{data.username}'s profile
+
+  if (data.loggedin)
+    if data.privacy
+      p (your profile is currently private)
+    else
+      p (your profile is currently public)
+    //-form(method='POST' action='/radio')
+    | Private:
+    input(type='radio' name='status' id="private" value="private")
+    br
+    br
+    | Public:
+    input(type='radio' name='status' id="public" value="public")
+    br
+    br
+    button(type='submit' onclick='setStatus()') Set
+
+  if order
+    div.orderList
+      p order summary:
+        br
+        br
+        each i in order
+          if i.username == data.username
+            a(href="/order/:" + i._id) #{i._id}
+            br
+            br
+
+  script
+     include ../client.js
+  script!= `const object = ${JSON.stringify(session.username)};`
+  //-script(src="client.js")
