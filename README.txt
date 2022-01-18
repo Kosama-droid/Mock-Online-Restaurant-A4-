@@ -1,7 +1,5 @@
 Kolene Lamizana
 
-Assignment #4
-
 Running the application:
   unzip the zip file and keep every folder and file in the same directory.
   open node.js and go to the directory where the folders and files are, using: cd
@@ -19,4 +17,3 @@ Design:
 Build status:
 
 - Need to refresh the page for (your profile is currently private/public) to update.
-- otherwise pretty good.
